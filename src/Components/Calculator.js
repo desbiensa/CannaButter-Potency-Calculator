@@ -7,13 +7,15 @@ const Form = styled.div`
     background-repeat: no-repeat;
     background-position: 50% 40%;
     background-size: 200px;
+    
 `;
 
 const Box = styled.div`
       padding: 10px;
       p {
         white-space: nowrap;
-      } 
+      }
+       
 `;
 
 
@@ -35,13 +37,13 @@ const Calculator = () => {
 
     return(
         <div>
-            <h1>Canna Butter Potency Calculator</h1>
+            <h1>Canna Butter Potent Calculator</h1>
             <Form>
                 <Box>
                     <label>TOTAL THC/mg</label><br/>
                         <input 
-                        type='float' 
-                        placeholder='0.0'
+                        type='number' 
+                        placeholder='0.00mg'
                         onChange={handleThcChange}
                         value={totalThc} />
                 </Box>
@@ -49,7 +51,7 @@ const Calculator = () => {
                     <label>Amount of Cannabis/g</label><br/>
                         <input 
                         type='number' 
-                        placeholder='0'
+                        placeholder='0.00g'
                         onChange={handleCannaChange}
                         value={amountOfCanna} />
                 </Box>
@@ -57,7 +59,7 @@ const Calculator = () => {
                     <label>Produced Butter/g</label><br/>
                         <input 
                         type='number'
-                        placeholder='0'
+                        placeholder='0.00g'
                         onChange={handleButterChange} 
                         value={producedButter} />
                 </Box>
@@ -65,9 +67,14 @@ const Calculator = () => {
             <button onClick={computeResult}>Submit</button>
           
             <Box>
-                <h3>The OPTIMAL POTENCY is: {result?(result).toFixed(2):(0.00).toFixed(2)}mg per gram of butter!</h3>
-                <p>Remove 5% to 10% for more accuracy</p>
-                <p>Final Approximation is <b>{result?(result * 0.95).toFixed(2):(0.00).toFixed(2)}mg</b> per gram of butter.</p>
+                {
+                    result?
+                    <h3>The OPTIMAL POTENCY is: {result}mg per gram of butter!</h3>
+                    :
+                    <h3>The OPTIMAL POTENCY is: 0.00mg per gram of butter!</h3>
+                }
+                <p>Remove 10% for more accuracy</p>
+                <p>Final Approximation is <b>{result?(result * 0.90).toFixed(2):(0.00).toFixed(2)}mg</b> per gram of butter.</p>
             </Box>
             
         </div>
