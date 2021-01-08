@@ -35,7 +35,7 @@ const Calculator = () => {
 
     return(
         <div>
-            <h1>Canna Butter Potent Calculator</h1>
+            <h1>Canna Butter Potency Calculator</h1>
             <Form>
                 <Box>
                     <label>TOTAL THC/mg</label><br/>
