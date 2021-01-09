@@ -1,35 +1,31 @@
-@import "~bootstrap/scss/bootstrap";
-@import "../custom";
+$prim: hsl(208, 94%, 44%);
+$sec: #74BF04;
+$succ: #84d904;
+$dang: #8c3e11;
+
+.Body {
+    padding-top: 12px;
+}
 
 #calc {
     margin:auto;
     width: 80%;
-    max-width: 540px;
+    max-width: 584px;
     border-radius: 25px;
-    background: #74BF04;
+    background: $sec;
     padding: 20px;
+    margin-top: 12px;
 }
 
 #label {
     color: white;
 }
 
-
-@media (min-width: 570px) {
-    #result {
-        color: white;
-        padding-top: 38px;
-        white-space: nowrap;
-        padding-left: 26px;
-    } 
-    #input {
-        text-align: center;
-        border-right: 2px solid white;
-        height: 100%;
-    }
-}
 #arrow {
-    padding-left: 38px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     padding-bottom: 9px;
 }
 
@@ -37,17 +33,68 @@
     padding: 12px;
 }
 
-@media (max-width: 569px) {
+.button {
+    border-radius: 8px;
+    border: none;
+    background-color: $prim;
+    color: white;
+    padding: 8px 12px;
+}
+.button:hover {
+    background-image: linear-gradient(to bottom, $prim, rgb(5, 59, 131));
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.flex-item-left {
+    flex: 50%;
+}
+
+.flex-item-right {
+    flex: 50%;
+}
+
+#result {
+    color: white;
+    white-space: nowrap;
+    padding: 30px;
+    padding-top: 34px;
+    margin: auto;
+    position: relative;
+
+} 
+#input {
+    text-align: center;
+    border-right: 2px solid white;
+    height: 100%;
+    padding-right: 20px;
+}
+
+
+@media (max-width: 583px) {
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .flex-item-left, .flex-item-right {
+        flex: 100%;
+    }
     #result {
         color: white;
         text-align: center;
         margin: auto;
-        width: 63%;
+        padding: 10px;
+        padding-top: 10px;
         white-space: nowrap;
+        position: relative;
     }
     #input {
         text-align: center;
         margin: auto;
-        width: 50%;
+        border-right: 0px;
+        padding-right: 0px;
     }
 }

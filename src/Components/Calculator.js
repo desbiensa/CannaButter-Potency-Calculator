@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import imageBG from '../img/bg.png';
 import arrow from '../img/arrow.png';
 import './Calculator.scss';
-import { Button, Container, Row, Col } from 'react-bootstrap';
 
 const Form = styled.div`
     background-image: URL(${imageBG});
@@ -33,15 +32,15 @@ const Calculator = () => {
     }
 
     return(
-        <div>
+        <div className='Body'>
             <div>
                 <div className='text-center'>
                     <h3 className='text-danger'>CannaButter Potency Calculator</h3>
                 </div>
             </div>
-            <Container className='d-flex justify-content-center' id='calc'>
-                <Row>
-                    <Col id='input'>
+            <section className='flex-container' id='calc'>
+                
+                    <div className='flex-item-left' id='input'>
                         <Form>
                             <Box>
                                 <label id='label'>TOTAL THC/mg</label><br/>
@@ -69,38 +68,38 @@ const Calculator = () => {
                             </Box>
                         </Form>
                         <div id='button'>
-                            <Button onClick={computeResult}>Submit</Button>
+                            <button className='button' onClick={computeResult}>Submit</button>
                         </div>
-                    </Col>
-                    <Col>
-                        <div id='result'>
-                            <Row>
-                                {
-                                    result?
-                                    <><p><b>The OPTIMAL POTENCY:</b> <br/><b>{result}mg</b> per gram of butter!</p></>
-                                    :
-                                    <><p><b>The OPTIMAL POTENCY:</b> <br/><b>0.00mg</b> per gram of butter!</p></>
-                                }
-                            </Row>
-                            <Row id='arrow'>
-                                <img src={arrow} />
-                            </Row>
-                            <Row>
-                                <p><b>Remove 10% for accuracy</b></p>
-                            </Row>
-                            <Row id='arrow'>
-                                <img src={arrow} />
-                            </Row>
-                            <Row>
-                                <p>Final Approximation is <br/><b>{result?(result * 0.90).toFixed(2):(0.00).toFixed(2)}mg</b> per gram of butter.</p>
-                            </Row>
+                    </div>
+                    
+                    <div className='flex-item-right' id='result'>
+                        <div>
+                            {
+                                result?
+                                <><p><b>The OPTIMAL POTENCY:</b> <br/><b>{result}mg</b> per gram of butter!</p></>
+                                :
+                                <><p><b>The OPTIMAL POTENCY:</b> <br/><b>0.00mg</b> per gram of butter!</p></>
+                            }
                         </div>
-                    </Col>
-                </Row>
+                        <div id='arrow'>
+                            <img src={arrow} alt='' />
+                        </div>
+                        <div>
+                            <p><b>Remove 10% for accuracy</b></p>
+                        </div>
+                        <div id='arrow'>
+                            <img src={arrow} alt='' />
+                        </div>
+                        <div>
+                            <p>Final Approximation is <br/><b>{result?(result * 0.90).toFixed(2):(0.00).toFixed(2)}mg</b> per gram of butter.</p>
+                        </div>
+                    </div>
+                    
                 
                 
                 
-            </Container>
+                
+            </section>
         </div>
 
     )
