@@ -68,7 +68,9 @@ const Calculator = () => {
                                     value={producedButter} />
                             </Box>
                         </Form>
-                        <Button onClick={computeResult}>Submit</Button>
+                        <div className='mt-2'>
+                            <Button onClick={computeResult}>Submit</Button>
+                        </div>
                     </Col>
                     <Col>
                         <div className='text-nowrap text-md-left pl-3' id='result'>
