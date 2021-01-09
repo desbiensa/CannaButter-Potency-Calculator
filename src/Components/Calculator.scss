@@ -23,9 +23,10 @@
     padding-bottom: 9px;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 569px) {
     #result {
         text-align: center;
-        margin-left: 25px;
+        margin: auto;
+        width: 56%;
     }
 }
