@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import imageBG from '../img/bg.png';
+import arrow from '../img/arrow.png';
+import './Calculator.scss';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 
 const Form = styled.div`
     background-image: URL(${imageBG});
@@ -11,14 +14,8 @@ const Form = styled.div`
 `;
 
 const Box = styled.div`
-      padding: 10px;
-      p {
-        white-space: nowrap;
-      }
-       
+      padding: 10px;       
 `;
-
-
 
 const Calculator = () => {
     const [totalThc, setMg] = useState();
@@ -37,47 +34,73 @@ const Calculator = () => {
 
     return(
         <div>
-            <h1>Canna Butter Potent Calculator</h1>
-            <Form>
-                <Box>
-                    <label>TOTAL THC/mg</label><br/>
-                        <input 
-                        type='number' 
-                        placeholder='0.00mg'
-                        onChange={handleThcChange}
-                        value={totalThc} />
-                </Box>
-                <Box>
-                    <label>Amount of Cannabis/g</label><br/>
-                        <input 
-                        type='number' 
-                        placeholder='0.00g'
-                        onChange={handleCannaChange}
-                        value={amountOfCanna} />
-                </Box>
-                <Box>
-                    <label>Produced Butter/g</label><br/>
-                        <input 
-                        type='number'
-                        placeholder='0.00g'
-                        onChange={handleButterChange} 
-                        value={producedButter} />
-                </Box>
-            </Form>
-            <button onClick={computeResult}>Submit</button>
-          
-            <Box>
-                {
-                    result?
-                    <h3>The OPTIMAL POTENCY is: {result}mg per gram of butter!</h3>
-                    :
-                    <h3>The OPTIMAL POTENCY is: 0.00mg per gram of butter!</h3>
-                }
-                <p>Remove 10% for more accuracy</p>
-                <p>Final Approximation is <b>{result?(result * 0.90).toFixed(2):(0.00).toFixed(2)}mg</b> per gram of butter.</p>
-            </Box>
-            
+            <div>
+                <div className='text-center'>
+                    <h3 className='text-danger'>CannaButter Potency Calculator</h3>
+                </div>
+            </div>
+            <Container className='d-flex justify-content-center' id='calc'>
+                <Row>
+                    <Col className='text-center pr-3'>
+                        <Form>
+                            <Box>
+                                <label id='label'>TOTAL THC/mg</label><br/>
+                                    <input 
+                                    type='number' 
+                                    placeholder='0.00mg'
+                                    onChange={handleThcChange}
+                                    value={totalThc} />
+                            </Box>
+                            <Box>
+                                <label id='label'>Amount of Cannabis/g</label><br/>
+                                    <input 
+                                    type='number' 
+                                    placeholder='0.00g'
+                                    onChange={handleCannaChange}
+                                    value={amountOfCanna} />
+                            </Box>
+                            <Box>
+                                <label id='label'>Produced Butter/g</label><br/>
+                                    <input 
+                                    type='number'
+                                    placeholder='0.00g'
+                                    onChange={handleButterChange} 
+                                    value={producedButter} />
+                            </Box>
+                        </Form>
+                        <Button onClick={computeResult}>Submit</Button>
+                    </Col>
+                    <Col>
+                        <div className='text-nowrap text-md-left pl-3' id='result'>
+                            <Row>
+                                {
+                                    result?
+                                    <><p><b>The OPTIMAL POTENCY:</b> <br/><b>{result}mg</b> per gram of butter!</p></>
+                                    :
+                                    <><p><b>The OPTIMAL POTENCY:</b> <br/><b>0.00mg</b> per gram of butter!</p></>
+                                }
+                            </Row>
+                            <Row id='arrow'>
+                                <img src={arrow} />
+                            </Row>
+                            <Row>
+                                <p><b>Remove 10% for accuracy</b></p>
+                            </Row>
+                            <Row id='arrow'>
+                                <img src={arrow} />
+                            </Row>
+                            <Row>
+                                <p>Final Approximation is <br/><b>{result?(result * 0.90).toFixed(2):(0.00).toFixed(2)}mg</b> per gram of butter.</p>
+                            </Row>
+                        </div>
+                    </Col>
+                </Row>
+                
+                
+                
+            </Container>
         </div>
+
     )
 };
 

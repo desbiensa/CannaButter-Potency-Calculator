@@ -1,0 +1,31 @@
+@import "~bootstrap/scss/bootstrap";
+@import "../custom";
+
+#calc {
+    margin:auto;
+    width: 80%;
+    max-width: 540px;
+    border-radius: 25px;
+    background: #74BF04;
+    padding: 20px;
+}
+
+#label {
+    color: white;
+}
+
+#result {
+    color: white;
+    padding-top: 38px;
+}
+#arrow {
+    padding-left: 38px;
+    padding-bottom: 9px;
+}
+
+@media (max-width: 440px) {
+    #result {
+        text-align: center;
+        margin-left: 25px;
+    }
+}
