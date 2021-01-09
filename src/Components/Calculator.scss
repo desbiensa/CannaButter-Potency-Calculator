@@ -14,19 +14,40 @@
     color: white;
 }
 
-#result {
-    color: white;
-    padding-top: 38px;
+
+@media (min-width: 570px) {
+    #result {
+        color: white;
+        padding-top: 38px;
+        white-space: nowrap;
+        padding-left: 26px;
+    } 
+    #input {
+        text-align: center;
+        border-right: 2px solid white;
+        height: 100%;
+    }
 }
 #arrow {
     padding-left: 38px;
     padding-bottom: 9px;
 }
 
+#button {
+    padding: 12px;
+}
+
 @media (max-width: 569px) {
     #result {
+        color: white;
         text-align: center;
         margin: auto;
-        width: 75%;
+        width: 46%;
+        white-space: nowrap;
+    }
+    #input {
+        text-align: center;
+        margin: auto;
+        width: 50%;
     }
 }

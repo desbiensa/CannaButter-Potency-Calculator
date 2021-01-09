@@ -41,7 +41,7 @@ const Calculator = () => {
             </div>
             <Container className='d-flex justify-content-center' id='calc'>
                 <Row>
-                    <Col className='text-center pr-3'>
+                    <Col id='input'>
                         <Form>
                             <Box>
                                 <label id='label'>TOTAL THC/mg</label><br/>
@@ -68,12 +68,12 @@ const Calculator = () => {
                                     value={producedButter} />
                             </Box>
                         </Form>
-                        <div className='mt-2'>
+                        <div id='button'>
                             <Button onClick={computeResult}>Submit</Button>
                         </div>
                     </Col>
                     <Col>
-                        <div className='text-nowrap text-md-left pl-3' id='result'>
+                        <div id='result'>
                             <Row>
                                 {
                                     result?
