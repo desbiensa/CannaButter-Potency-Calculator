@@ -8,64 +8,70 @@ const Form = styled.div`
     background-image: URL(${imageBG});
     background-repeat: no-repeat;
     background-position: 50% 40%;
-    background-size: 200px;
+    background-size: 250px;
     
 `;
 
-const Box = styled.div`
-      padding: 10px;       
-`;
-
 const Calculator = () => {
+    const [thcAct, setTh] = useState();
     const [totalThc, setMg] = useState();
     const [amountOfCanna, setGrC] = useState();
     const [producedButter, setGrB] = useState();
     const [result, setResult] = useState();
 
+    const handleActiveChange = (event) => setTh(event.target.value);
     const handleThcChange = (event) => setMg(event.target.value);
     const handleCannaChange = (event) => setGrC(event.target.value);
     const handleButterChange = (event) => setGrB(event.target.value);
 
     const computeResult = () => {
-        let resultValue = ((totalThc * amountOfCanna)/producedButter).toFixed(2);
+        let resultValue = (((+thcAct + +totalThc * 0.877) * +amountOfCanna)/+producedButter).toFixed(2);
         setResult(resultValue);
     }
 
     return(
         <div className='Body'>
             <div>
-                <div className='text-center'>
-                    <h3 className='text-danger'>CannaButter Potency Calculator</h3>
+                <div className='title'>
+                    <h3 >CannaButter Potency Calculator</h3>
                 </div>
             </div>
             <section className='flex-container' id='calc'>
                 
                     <div className='flex-item-left' id='input'>
                         <Form>
-                            <Box>
+                            <div>
+                                <label id='label'>THC/mg</label><br/>
+                                    <input 
+                                    type='number' 
+                                    placeholder='0.00mg'
+                                    onChange={handleActiveChange}
+                                    value={thcAct} />
+                            </div>
+                            <div>
                                 <label id='label'>TOTAL THC/mg</label><br/>
                                     <input 
                                     type='number' 
                                     placeholder='0.00mg'
                                     onChange={handleThcChange}
                                     value={totalThc} />
-                            </Box>
-                            <Box>
+                            </div>
+                            <div>
                                 <label id='label'>Amount of Cannabis/g</label><br/>
                                     <input 
                                     type='number' 
                                     placeholder='0.00g'
                                     onChange={handleCannaChange}
                                     value={amountOfCanna} />
-                            </Box>
-                            <Box>
+                            </div>
+                            <div>
                                 <label id='label'>Produced Butter/g</label><br/>
                                     <input 
                                     type='number'
                                     placeholder='0.00g'
                                     onChange={handleButterChange} 
                                     value={producedButter} />
-                            </Box>
+                            </div>
                         </Form>
                         <div id='button'>
                             <button className='button' onClick={computeResult}>Submit</button>
