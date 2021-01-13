@@ -82,8 +82,9 @@ $dang: #8c3e11;
     text-shadow: 2px 2px 1px #666;
 }
 
-a.footNote {
-    font-weight: bold;
+.linkY {
+    white-space: nowrap;
+    color: $prim;
 }
 
 .footNote {

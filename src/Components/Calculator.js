@@ -105,7 +105,7 @@ const Calculator = () => {
                         </div>
                     </div>
                     <div className='footNote'>
-                    <p>Please support and subscribe to my <a href='http://www.youtube.com/channel/UC627LnTjnTPFwITyWguF0tg?sub_confirmation=1' target='_blank'>Youtube Channel</a></p>
+                    <p>Please <b>support</b> and <b>subscribe</b> to my <b><a href='http://www.youtube.com/channel/UC627LnTjnTPFwITyWguF0tg?sub_confirmation=1' target='_blank' rel='noreferrer' className='linkY'>Youtube Channel</a></b></p>
                     </div>
                      
             </section>
