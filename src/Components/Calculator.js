@@ -103,7 +103,7 @@ const Calculator = () => {
                         <div>
                             <p>Final Approximation is <br/><b className='numpar'>{result?(result * 0.90).toFixed(2):(0.00).toFixed(2)}mg of THC</b><br/> per gram of butter.</p>
                         </div>
-                    </div><br/>
+                    </div>
                     <div className='footNote'>
                     <p>Please support and subscribe to my <a href='http://www.youtube.com/channel/UC627LnTjnTPFwITyWguF0tg?sub_confirmation=1' target='_blank'>Youtube Channel</a></p>
                     </div>
