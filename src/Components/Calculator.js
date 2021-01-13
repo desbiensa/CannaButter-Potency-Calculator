@@ -25,7 +25,11 @@ const Calculator = () => {
     const handleButterChange = (event) => setGrB(event.target.value);
 
     const computeResult = () => {
-        let resultValue = (((+thcAct + +totalThc * 0.877) * +amountOfCanna)/+producedButter).toFixed(2);
+        let valTh = thcAct ? thcAct : 0;
+        let valTot = totalThc ? totalThc : alert('Please fill a VALID TOTAL THC value!');
+        let valCan = amountOfCanna ? amountOfCanna : alert('Please fill a VALID AMOUNT OF CANNABIS value!');
+        let valBut = producedButter ? producedButter : alert('Please fill a VALID PRODUCED BUTTER value!');
+        let resultValue = (((+valTh + +valTot * 0.877) * +valCan)/+valBut).toFixed(2);
         setResult(resultValue);
     }
 
@@ -82,9 +86,9 @@ const Calculator = () => {
                         <div>
                             {
                                 result?
-                                <><p><b>The OPTIMAL POTENCY:</b> <br/><b>{result}mg</b> per gram of butter!</p></>
+                                <><p><b>The OPTIMAL POTENCY:</b> <br/><b className='numpar'>{result}mg of THC</b><br/> per gram of butter!</p></>
                                 :
-                                <><p><b>The OPTIMAL POTENCY:</b> <br/><b>0.00mg</b> per gram of butter!</p></>
+                                <><p><b>The OPTIMAL POTENCY:</b> <br/><b className='numpar'>0.00mg of THC</b><br/> per gram of butter!</p></>
                             }
                         </div>
                         <div id='arrow'>
@@ -97,14 +101,13 @@ const Calculator = () => {
                             <img src={arrow} alt='' />
                         </div>
                         <div>
-                            <p>Final Approximation is <br/><b>{result?(result * 0.90).toFixed(2):(0.00).toFixed(2)}mg</b> per gram of butter.</p>
+                            <p>Final Approximation is <br/><b className='numpar'>{result?(result * 0.90).toFixed(2):(0.00).toFixed(2)}mg of THC</b><br/> per gram of butter.</p>
                         </div>
+                    </div><br/>
+                    <div className='footNote'>
+                    <p>Please support and subscribe to my <a href='http://www.youtube.com/channel/UC627LnTjnTPFwITyWguF0tg?sub_confirmation=1' target='_blank'>Youtube Channel</a></p>
                     </div>
-                    
-                
-                
-                
-                
+                     
             </section>
         </div>
 

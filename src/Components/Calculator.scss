@@ -32,6 +32,12 @@ $dang: #8c3e11;
     margin-bottom: 0px;
 }
 
+// .bgLeaf {
+//     background: url('../img/bg.png' ) no-repeat;
+//     background-position: 50% 40%;
+//     background-size: 250px;
+// }
+
 #arrow {
     display: block;
     margin-left: auto;
@@ -55,9 +61,11 @@ $dang: #8c3e11;
     background-image: linear-gradient(to bottom, $prim, rgb(5, 59, 131));
 }
 
+
+
 .flex-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 .flex-item-left {
@@ -68,21 +76,44 @@ $dang: #8c3e11;
     flex: 50%;
 }
 
+.numpar {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 1px #666;
+}
+
+a.footNote {
+    font-weight: bold;
+}
+
+.footNote {
+    flex: 1 0 300px;
+    flex-grow: 1;
+    margin-top: 16px;
+    text-align: center;
+    color: $dang;
+}
+
 #result {
-    color: white;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 300px;
     white-space: nowrap;
-    padding: 30px;
-    padding-left: 40px;
-    padding-right: 20px;
-    padding-top: 28px;
+    // padding: 30px;
+    // padding-left: 40px;
+    // padding-right: 20px;
+    // padding-top: 28px;
     margin: auto;
+    display: inline-block;
 
 } 
 #input {
     text-align: center;
+    width: 300px;
     border-right: 2px solid white;
     height: 100%;
     padding-right: 20px;
+    display: inline-block;
 }
 
 
