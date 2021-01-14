@@ -2,4 +2,4 @@
 
 There are still some kinks to fix, I will try to fix them and I welcome the input of anyone and if any of you wants to branch it and offer some improvement, please be my guest!
 
-![alt text](https://github.com/desbiensa/CannaButter-Potency-Calculator/blob/main/img_2.png)
+![alt text](https://github.com/desbiensa/CannaButter-Potency-Calculator/blob/main/img_3.png)
