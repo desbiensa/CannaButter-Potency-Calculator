@@ -72,7 +72,7 @@ const Calculator = () => {
                             <div>
                                 <label id='label'>Amount of Cannabis/g</label>
                                 <div className={classes.helpTip}>
-                                    <p>The amount of Cannabis (dried flower) in gram, used to produce the CannaButter</p>
+                                    <p>The amount of Cannabis (dried flower) in gram, used to produce the CannaButter.</p>
                                 </div><br/>
                                     <input 
                                     type='number' 
@@ -83,7 +83,7 @@ const Calculator = () => {
                             <div>
                                 <label id='label'>Produced Butter/g</label>
                                 <div className={classes.helpTip}>
-                                    <p>The <b>final product</b>, your output of CannaButter once completed. See the tutorial <a href='https://youtu.be/3XnVOfpBoAk' rel='noreferrer' target='_blank'>How to make CannaButter</a> for reference</p>
+                                    <p>The <b>final product</b>, your output of CannaButter once completed. See the tutorial <a href='https://youtu.be/3XnVOfpBoAk' rel='noreferrer' target='_blank'>How to make CannaButter</a> for reference.</p>
                                 </div><br/>
                                     <input 
                                     type='number'
