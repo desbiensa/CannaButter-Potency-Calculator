@@ -1,4 +1,3 @@
-import './App.scss';
 import Calculator from './Components/Calculator';
 
 function App() {

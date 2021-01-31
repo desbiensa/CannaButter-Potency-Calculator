@@ -1,12 +1,9 @@
-/* The following block can be included in a custom.scss */
-
-/* make the customizations */
-$theme-colors: (
-    "primary": #0777D9,
-    "secondary": #74BF04,
-    "success": #84d904,
-    "danger": #8c3e11
-);
-
-/* import bootstrap to set changes */
-@import "~bootstrap/scss/bootstrap";
+$prim: #0777da;
+$prima: #4ba658;
+$secon: #c4d9b0;
+$utility: #a66f3f;
+$post: #8c5d42;
+$warni: #f28b50;
+$dang: #8c3e11;
+$secTxt: #333;
+$fad: rgba(196, 217, 176, 0.3);
