@@ -47,7 +47,7 @@ const Calculator = () => {
                             <div>
                                 <label id='label'>THC/mg</label>
                                 <div className={classes.helpTip}>
-                                    <p>The amount of considered <b>active THC</b> in the Marijuana. Which is equivalent to approximately between 1 to 4%. Note, oils and edibles will have the same value as the TOTAL THC, cause its state is has to be active.</p>
+                                    <p>The amount of considered <b>active THC</b> in the Marijuana. Which is equivalent to approximately between 1 to 4%. Note, oils and edibles will have the same value as the TOTAL THC, cause its state has to be active.</p>
                                 </div><br/>
                                     <input 
                                     type='number' 
