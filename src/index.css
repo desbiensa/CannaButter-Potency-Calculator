@@ -1,18 +1,67 @@
-body {
-    padding: 0;
-    margin: 0;
-    min-width: 100%;
-  font-family: "Open Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@theme {
+  --color-primary: #4ba658;
+  --color-primary-light: #c4d9b0;
+  --color-primary-blue: #0777da;
+  --color-utility: #a66f3f;
+  --color-post: #8c5d42;
+  --color-warning: #f28b50;
+  --color-danger: #8c3e11;
+  --color-secondary: #c4d9b0;
+  --color-secondary-text: #333;
+  --color-secondary-fade: rgba(196, 217, 176, 0.3);
+  
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
-body::-webkit-scrollbar {
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 140 42% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 94 33% 80%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 94 33% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 94 33% 90%;
+    --accent-foreground: 0 0% 20%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 140 42% 51%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Open Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body::-webkit-scrollbar {
     display: none;
   }
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
 }
