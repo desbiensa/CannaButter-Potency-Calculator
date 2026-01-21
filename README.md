@@ -2,8 +2,6 @@
 
 A modern, type-safe web application for calculating the optimal THC potency in your cannabutter. Built with the latest web technologies for a fast, reliable, and beautiful user experience.
 
-![CannaButter Calculator](https://github.com/desbiensa/CannaButter-Potency-Calculator/blob/main/img_4.png)
-
 ## 🚀 Tech Stack
 
 This project has been completely modernized with:
