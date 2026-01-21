@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  cannabutter-calculator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cannabutter-calculator
+    restart: unless-stopped
+    ports:
+      - "5174:5174"
+    networks:
+      - cannabutter-network
+    labels:
+      - "com.docker.compose.project=cannabutter-calculator"
+
+networks:
+  cannabutter-network:
+    driver: bridge
